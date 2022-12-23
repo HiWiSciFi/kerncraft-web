@@ -1,4 +1,4 @@
-files_src = src/frontendProvider.go
+files_src = src/server.go
 REMOVE = rm -rf
 
 .PHONY: all clean
