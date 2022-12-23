@@ -15,5 +15,5 @@ backend.build: ${files_src}
 	echo building backend...
 	go build -o build/ ${files_src}
 	touch $@
+	cp -a build/. ../out/
 	echo finished building backend
-
