@@ -15,7 +15,9 @@ clean:
 
 frontend.build: ${files_root} ${files_static} ${files_src}
 	echo building frontend...
+	npm install
 	npm run build
 	touch $@
-	cp -a build/. ../out/static/
+	mkdir -p ../out/static
+	cp -r -a -u build/. ../out/static/
 	echo finished building frontend

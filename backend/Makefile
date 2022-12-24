@@ -11,10 +11,13 @@ clean:
 	${REMOVE} backend.build
 	echo finished cleaning backend build output
 
-
 backend.build: ${files_src} go.mod go.sum
 	echo building backend...
 	go build -v -o build/ ${files_src}
 	touch $@
-	cp -a build/. ../out/
+	mkdir -p ../out
+	cp -r -a -u build/. ../out/
+	git -C .. submodule update --init
+	mkdir -p ../out/kerncraft/examples
+	cp -r -a -u ../dependencies/kerncraft/examples/. ../out/kerncraft/examples/
 	echo finished building backend
