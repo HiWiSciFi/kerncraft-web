@@ -1,0 +1,3 @@
+[submodule "dependencies/kerncraft"]
+	path = dependencies/kerncraft
+	url = https://github.com/RRZE-HPC/kerncraft.git
